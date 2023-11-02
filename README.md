@@ -1,43 +1,28 @@
-# 🧰 Simple TypeScript Starter | 2023
+# 🧰 Free proxy nodejs
 
-> We talk about a lot of **advanced Node.js and TypeScript** concepts on [the blog](https://khalilstemmler.com), particularly focused around Domain-Driven Design and large-scale enterprise application patterns. However, I received a few emails from readers that were interested in seeing what a basic TypeScript starter project looks like. So I've put together just that.
+> Free proxy nodejs is a lightweight Node.js NPM package designed to simplify the process of obtaining a list of proxies from https://spys.one. This package offers a convenient and customizable way to retrieve proxy data for your web scraping, security, or network-related projects. Whether you're working on web scraping tasks or require proxies for enhanced anonymity.
 
-### Features
 
-- Minimal
-- TypeScript v4
-- Testing with Jest
-- Linting with Eslint and Prettier
-- Pre-commit hooks with Husky
-- VS Code debugger scripts
-- Local development with Nodemon
+## Features
+- Residential proxies
+- Ease of Use: Easily fetch proxy data from https://spys.one with just a few lines of code.
+- Customization: Configure the package to filter proxies based on your specific requirements, including country, anonymity level, and more.
+- Reliability: Free proxy is built to handle changes in the website's structure, ensuring consistent proxy data retrieval.
+- Proxy Validation: Validate the proxies to ensure they are working and responsive before use.
 
-### Scripts
+## Getting Started
+### Installation
 
-#### `npm run start:dev`
+```bash
+$ npm i free-proxy-nodejs -S
+```
 
-Starts the application in development using `nodemon` and `ts-node` to do hot reloading.
+### Usage
 
-#### `npm run start`
+#### Example
+```ts
+import freeProxy from 'free-proxy-nodejs';
 
-Starts the app in production by first building the project with `npm run build`, and then executing the compiled JavaScript at `build/index.js`.
-
-#### `npm run build`
-
-Builds the app at `build`, cleaning the folder first.
-
-#### `npm run test`
-
-Runs the `jest` tests once.
-
-#### `npm run test:dev`
-
-Run the `jest` tests in watch mode, waiting for file changes.
-
-#### `npm run prettier-format`
-
-Format your code.
-
-#### `npm run prettier-watch`
-
-Format your code in watch mode, waiting for file changes.
+// Get list proxies
+const proxies = await freeProxy.getProxies()
+```
