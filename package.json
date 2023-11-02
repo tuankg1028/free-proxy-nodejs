@@ -1,8 +1,9 @@
 {
   "name": "free-proxy-nodejs",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "",
   "main": "lib/index.js",
+  "types": "lib/index.d.ts",
   "scripts": {
     "build": "rimraf ./lib && tsc",
     "start:dev": "npx nodemon",
