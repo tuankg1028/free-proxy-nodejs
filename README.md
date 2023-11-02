@@ -14,7 +14,7 @@
 ### Installation
 
 ```bash
-$ npm i free-proxy-nodejs -S
+npm i free-proxy-nodejs -S
 ```
 
 ### Usage
@@ -25,4 +25,19 @@ import freeProxy from 'free-proxy-nodejs';
 
 // Get list proxies
 const proxies = await freeProxy.getProxies()
+// [
+//   {
+//     host: '8.218.201.148',
+//     port: 15673,
+//     type: 'SOCKS5',
+//     country: 'Hong Kong'
+//   },
+//   {
+//     host: '192.210.197.134',
+//     port: 3128,
+//     type: 'HTTPS',
+//     country: 'United States'
+//   },
+//   ...
+// ]
 ```
