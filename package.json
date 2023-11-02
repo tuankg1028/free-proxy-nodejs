@@ -1,12 +1,12 @@
 {
   "name": "free-proxy-nodejs",
-  "version": "1.0.0",
-  "description": "A basic typescript app starter for 2023.",
-  "main": "index.js",
+  "version": "1.0.3",
+  "description": "",
+  "main": "lib/index.js",
   "scripts": {
-    "build": "rimraf ./build && tsc",
+    "build": "rimraf ./lib && tsc",
     "start:dev": "npx nodemon",
-    "start": "npm run build && node build/index.js",
+    "start": "npm run lib && node lib/index.js",
     "lint": "eslint . --ext .ts",
     "prettier-format": "run-script-os",
     "prettier-format:win32": "prettier --config .prettierrc \"./src/**/*.ts\" --write",
@@ -24,8 +24,21 @@
       "pre-commit": "npm run test && npm run prettier-format && npm run lint"
     }
   },
-  "keywords": [],
-  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/tuankg1028/free-proxy-nodejs.git"
+  },
+  "keywords": [
+    "proxy",
+    "proxy list",
+    "http proxy",
+    "esidential proxy"
+  ],
+  "files": [
+    "lib"
+  ],
+  "author": "TuanLe <lethanhtuan1028@gmail.com>",
+  "homepage": "https://github.com/tuankg1028/free-proxy-nodejs#readme",
   "license": "ISC",
   "devDependencies": {
     "@types/jest": "^28.1.8",

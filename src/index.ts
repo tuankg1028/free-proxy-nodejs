@@ -1,4 +1,3 @@
-import axios from 'axios';
 import cheerio from 'cheerio';
 import puppeteer from 'puppeteer-extra';
 import StealthPlugin from 'puppeteer-extra-plugin-stealth';
@@ -26,9 +25,13 @@ export async function getProxies(): Promise<Proxy[]> {
 
   const proxies: Proxy[] = [];
   $('table table table:nth-child(2) > tbody tr').each(function () {
-    const [host, port] = $(this).find('td:nth-child(1)').text().split(':');
-    const type = $(this).find('td:nth-child(2)').text().split(' ')[0];
-    const country = $(this).find('td:nth-child(4)').text();
+    const [host, port] = $(this)
+      .find('td:nth-child(1)')
+      .text()
+      .trim()
+      .split(':');
+    const type = $(this).find('td:nth-child(2)').text().trim().split(' ')[0];
+    const country = $(this).find('td:nth-child(4)').text().trim();
     const status = $(this)
       .find('td:nth-child(5) acronym')
       .attr('title')
