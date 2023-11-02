@@ -13,18 +13,18 @@ interface Proxy {
 
 export async function getProxies(): Promise<Proxy[]> {
   puppeteer;
-  const browser = await puppeteer.launch({ headless: 'new' });
+  const browser = await puppeteer.launch({ headless: false });
   const page = await browser.newPage();
-  await page.goto('https://spys.one/free-proxy-list', {
+  await page.goto('https://spys.one/en/free-proxy-list', {
     waitUntil: 'networkidle0',
   });
-
+  // await page.select("select[name='xpp']", '1');
   const html = await page.content();
   const $ = cheerio.load(html, {});
   $('script').remove();
 
   const proxies: Proxy[] = [];
-  $('table table table:nth-child(2) > tbody tr').each(function () {
+  $('table > tbody table > tbody tr').each(function () {
     const [host, port] = $(this)
       .find('td:nth-child(1)')
       .text()
@@ -33,7 +33,7 @@ export async function getProxies(): Promise<Proxy[]> {
     const type = $(this).find('td:nth-child(2)').text().trim().split(' ')[0];
     const country = $(this).find('td:nth-child(4)').text().trim();
     const status = $(this)
-      .find('td:nth-child(5) acronym')
+      .find('td:nth-child(8) acronym')
       .attr('title')
       ?.split('status=')
       ?.pop();
@@ -42,7 +42,7 @@ export async function getProxies(): Promise<Proxy[]> {
       proxies.push({ host, port: Number(port), type, country });
     }
   });
-
+  console.log(proxies);
   return proxies;
 }
 
