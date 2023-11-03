@@ -42,6 +42,7 @@
   "homepage": "https://github.com/tuankg1028/free-proxy-nodejs#readme",
   "license": "ISC",
   "devDependencies": {
+    "@types/bluebird": "^3.5.41",
     "@types/jest": "^28.1.8",
     "@types/node": "^18.6.1",
     "@typescript-eslint/eslint-plugin": "^5.31.0",
@@ -63,10 +64,14 @@
   },
   "dependencies": {
     "axios": "^1.6.0",
+    "bluebird": "^3.7.2",
     "cheerio": "^1.0.0-rc.12",
+    "http-proxy-agent": "^7.0.0",
+    "https-proxy-agent": "^7.0.2",
     "jest-cucumber": "^3.0.1",
     "puppeteer": "^21.4.1",
     "puppeteer-extra": "^3.3.6",
-    "puppeteer-extra-plugin-stealth": "^2.11.2"
+    "puppeteer-extra-plugin-stealth": "^2.11.2",
+    "socks-proxy-agent": "^8.0.2"
   }
 }
