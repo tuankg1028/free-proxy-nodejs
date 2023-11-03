@@ -1,9 +1,8 @@
-interface Proxy {
+export interface Proxy {
     host: string;
     port: number;
-    type: string;
+    protocol: string;
     country: string;
 }
 export declare function getProxies(): Promise<Proxy[]>;
-export {};
 //# sourceMappingURL=index.d.ts.map
